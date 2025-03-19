@@ -9,16 +9,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/users")
-
 public class UserController {
 
     private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id){
